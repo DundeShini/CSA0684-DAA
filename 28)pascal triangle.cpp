@@ -1,22 +1,19 @@
 #include <stdio.h>
 int main() {
-   int rows, k, i, j;
+   int n, coef = 1, s, i, j;
    printf("Enter the number of rows: ");
-   scanf("%d", &rows);
-   for (i = 1; i <=rows; i++)
-    {
-      for (k= 1; k<= rows - i;k++)
-      {
-         printf(" ");
+   scanf("%d", &n);
+   for (i = 0; i < n; i++) {
+      for (s = 1; s <= n - i; s++)
+         printf("  ");
+      for (j = 0; j <= i; j++) {
+      	if (j == 0 || i == 0)
+            coef = 1;
+        else
+            coef = coef * (i - j + 1) / j;
+            printf(" %d ", coef);
       }
-      for (j=1;j<=i;j++)
-      {
-      
-         printf("%d ",j);
- 	  }
       printf("\n");
-    }
-      
-   
+   }
    return 0;
 }
